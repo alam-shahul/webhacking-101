@@ -1,0 +1,29 @@
+.puzzle_title {
+    font-family: "New Rodin DB";
+    font-size: 2em;
+}
+.puzzle_0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.crossword_container{
+    width: 400px;
+    height: 400px;
+    margin: 0 20px 0 20px;
+}
+.clue.correct::before {
+  content: "\2714  ";  /* show check mark before correctly answered clues */
+}
+
+.direction {
+    display: none;
+}
+.visible {
+    display: block;
+}
+
+@font-face {
+  font-family: 'New Rodin DB';
+    src: local('NewRodin DB'), url(./NewRodinDB.otf) format('opentype');
+}

@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: horizontal;
+    text-align: center;
+}
+.navbar {
+  width: 100px;
+}
+.puzzle_container {
+    width: calc(100vw - 180px);
+}
+
+.completed_puzzle {
+    background-color: green;
+}
+
+.incomplete_puzzle {
+    background-color: blue;
+}
