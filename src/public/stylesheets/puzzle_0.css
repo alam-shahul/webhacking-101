@@ -16,7 +16,7 @@
   content: "\2714  ";  /* show check mark before correctly answered clues */
 }
 
-.direction {
+.clues{
     display: none;
 }
 .visible {

@@ -1,16 +1,21 @@
 import logo from './logo.svg';
 import './public/stylesheets/App.css';
-import { useState } from "react"
+import { useState, useEffect} from "react"
 import Puzzle0 from './components/Puzzle0.js'
 import crypto from "crypto-js";
 
 function PuzzleButton(props) {
+    const [solved, setSolved] = useState(false)
     console.log(props.hash)
     console.log(props.expectedHash)
     console.log(props.hash === props.expectedHash)
+    useEffect(() => {
+      if (props.hash === props.expectedHash)
+        setSolved(true)
+    })
     return (
         <>
-          { (props.hash == props.expectedHash) ?
+          { (solved) ?
             <button className='completed_puzzle'>
               Puzzle {props.index}
             </button>
