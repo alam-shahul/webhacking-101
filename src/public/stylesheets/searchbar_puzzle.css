@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin: 20px 15px 0;
+    font-size: 13px;
+}
+
+nav li {
+    list-style-type: none;
+    margin: 0 20px 0 0;
+    text-transform: capitalize;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #000000;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+/* --- pushes the elements on the right */
+.nav-right {
+    margin-left: auto;
+}
+
+.sign-in-button {
+    background: #5555cf;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.box-grid {
+    display: grid;
+    grid-template-columns: 5px 5px 5px;
+    grid-template-rows: 5px 5px 5px;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+.box-item {
+    background: #000000;
+}
+
+/* GOOGLE LOGO AND SEARCH */
+.google-function {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.google-name {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.google-name:nth-child(1) {
+    text-transform: capitalize;
+    color: #4285F4;
+}
+
+.google-name:nth-child(2) {
+    color: #DB4437;
+}
+
+.google-name:nth-child(3) {
+    color: #F4B400;
+}
+
+.google-name:nth-child(4) {
+    color: #4285F4;
+}
+
+.google-name:nth-child(5) {
+    color: #0F9D58;
+}
+
+.google-name:nth-child(6) {
+    color: #DB4437;
+}
+
+.google-name:nth-child(7) {
+    color: #F4B400;
+}
+
+.google-name:nth-child(8) {
+    color: #4285F4;
+}
+
+.google-name:nth-child(9) {
+    color: #0F9D58;
+}
+
+.google-name:nth-child(10) {
+    color: #DB4437;
+}
+
+.fa-search {
+    position: relative;
+    left: 35px;
+    bottom: 2px;
+    top: 2px;
+    color: #888888;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+}
+
+.search-button {
+    margin-left: 10px;
+}
+
+.google-button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+}
+
+.google-button:hover {
+    cursor: pointer;
+    background: #e8e2e2;
+    border: 1px solid #838383;
+    box-shadow: 2px 2px 10px #888888;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.browser-container {
+    border: 3px solid #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 800px;
+}
+
+.browser-top {
+    padding: 10px;
+    background: #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-align: left;
+}
+
+.browser-content {
+    padding: 10px;
+}
+
+.search-bar-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+div#search-bar {
+    width: 450px;
+    height: 40px;
+    background-color: lightgray;
+    text-align: left;
+    padding: 10px;
+}
+
+input#search-bar {
+    padding: 12px 40px;
+    margin: 20px 0 20px 0;
+    border-radius: 25px;
+    width: 450px;
+    outline: none;
+    border: 1px solid #888888;
+}
+
+input#search-bar:hover {
+    box-shadow: 2px 2px 8px #888888;
+}
