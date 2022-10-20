@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import '../public/stylesheets/puzzle_0.css';
 import { Crossword, ThemeProvider }from '@jaredreisinger/react-crossword';
 
-function Puzzle1(props) {
+function Puzzle0(props) {
   const crosswordRef = useRef(null);
   const data = {
       across: {
@@ -63,4 +63,4 @@ function Puzzle1(props) {
   );
 }
 
-export default Puzzle1;
+export default Puzzle0;

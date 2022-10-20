@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import '../public/stylesheets/searchbar_puzzle.css';
 
 function SearchBarPuzzle(props) {
@@ -9,7 +9,11 @@ function SearchBarPuzzle(props) {
       let searchBar = document.getElementById("search-bar");
       console.log(searchBar.value)
       if (searchBar && searchBar.tagName === "INPUT" && searchBar.value === "cat videos") {
-        alert("puzzle finished!");
+        props.updatePuzzleHash(JSON.stringify({
+            tag_name: searchBar.tagName,
+            value: searchBar.value
+          })
+        )
       }
     }
     setIsCheckingSearchBar(false);
@@ -18,10 +22,12 @@ function SearchBarPuzzle(props) {
     <div className="puzzle">
       <div className="puzzle_title">
         <div className="puzzle_header">
-        Puzzle 2
+        Puzzle 3
         </div>
-        you're trying to search for cat videos, but something's not right...
+        Search for cat videos!
       </div>
+      <div>It doesn't seem like the search bar is accepting your <span className="monospace">input</span>...</div>
+      <br/>
 
       <div className="browser-container">
         <div className="browser-top">

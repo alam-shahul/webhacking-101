@@ -1,20 +1,27 @@
 .container {
     display: flex;
     justify-content: flex-start;
-    flex-direction: horizontal;
+    flex-direction: row;
     text-align: center;
-}
-.navbar {
-  width: 100px;
 }
 .puzzle_container {
     width: calc(100vw - 180px);
 }
 
+.home-text {
+  padding: 0 10px;
+  text-align: left;
+}
+
 .completed_puzzle {
-    background-color: green;
+    color: green;
+	text-decoration: line-through;
 }
 
 .incomplete_puzzle {
-    background-color: blue;
+}
+
+a, a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
 }
