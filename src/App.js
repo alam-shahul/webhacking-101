@@ -6,6 +6,8 @@ import Puzzle0 from './components/Puzzle0.js'
 import Puzzle1 from './components/Puzzle1.js'
 import Puzzle2 from './components/Puzzle2.js'
 import Puzzle3 from './components/SearchBarPuzzle.js'
+import Puzzle4 from './components/Puzzle4.js'
+import Puzzle5 from './components/Puzzle5.js'
 import crypto from "crypto-js";
 
 import Drawer from '@mui/material/Drawer';
@@ -56,7 +58,8 @@ function App() {
       'dc1faa3599839920ca5b897265d37acfd93d5e32ebcbb65c468d60ac79003ffacc4b95350fa39501b8eee31619ef37144e6cdf575070db3dae437cca58275d6a',
       '2fe9de7d85da5ebba405ecfd4ee543ddaaa3a9a70eeec2143e90b4e5ae7c960320491a1b3199134854a5274cf5cadea19bc73ed980fb9fe5e0ed705035c68230',
       '77305c572ff69e4795a81531a53a9fc99d3fc9ce0ee181517c980ba37d584c0cfa9a6554008d81008a44cd62851a6ecec570b8b83c5c7adb1b2fbb8a72b028b7',
-      '6f4fd6b745d74e599e2a2862636293f4debbd0eac0975c61d6f9f69812f277c43cd8bba95a2535b0b856ba1b72507ca641634d075053d5ab5b6ae009aff6f0f6',
+      '088a2fc4d66af286eb6929c8869a3350cfc62de58ff45d16275c6f98e84a005af70edd933c4bcced65bdc66271ef24a4146f6e219ff52e20844f4209555d83a9',
+      'c5e88d865bdd8e8ca19846bd96ea1b66d6dadd2b20b24dc7180df723c6804fe985176d3628d3b0e2919b79eab8b6475c713c54bb4c977e6146272d27391f3e52',
   ]
 
   const num_puzzles = 5;
@@ -93,6 +96,8 @@ function App() {
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={1}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={2}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={3}/>
+                <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={4}/>
+                <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={5}/>
               </List>
             </Drawer>
           </div>
@@ -103,6 +108,8 @@ function App() {
               <Route exact path="/puzzle1" element={<Puzzle1 updatePuzzleHash={(plain_text) => updateHash(1, plain_text)} unlocked={puzzleState[0] === expectedHashes[0]}/>}/>
               <Route exact path="/puzzle2" element={<Puzzle2 updatePuzzleHash={(plain_text) => updateHash(2, plain_text)} unlocked={puzzleState[1] === expectedHashes[1]}/>}/>
               <Route exact path="/puzzle3" element={<Puzzle3 updatePuzzleHash={(plain_text) => updateHash(3, plain_text)} unlocked={puzzleState[2] === expectedHashes[2]}/>}/>
+              <Route exact path="/puzzle4" element={<Puzzle4 updatePuzzleHash={(plain_text) => updateHash(4, plain_text)} unlocked={puzzleState[3] === expectedHashes[3]}/>}/>
+              <Route exact path="/puzzle5" element={<Puzzle5 updatePuzzleHash={(plain_text) => updateHash(5, plain_text)} unlocked={puzzleState[4] === expectedHashes[4]}/>}/>
             </Routes>
           </div>
         </div>

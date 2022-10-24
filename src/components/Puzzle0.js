@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import '../public/stylesheets/puzzle_0.css';
-import { Crossword, ThemeProvider }from '@jaredreisinger/react-crossword';
+import { Crossword, ThemeProvider } from '@jaredreisinger/react-crossword';
 
 function Puzzle0(props) {
   const crosswordRef = useRef(null);

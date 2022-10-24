@@ -1,0 +1,8 @@
+.obfuscate_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.codeblock {
+  width: 500px;
+}

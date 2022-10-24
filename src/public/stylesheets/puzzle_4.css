@@ -1,0 +1,14 @@
+.hidden {
+  visibility: hidden;
+}
+
+#response_container {
+  width: 100%;
+  height: 300px;
+  border: black 2px dashed;
+}
+
+.injection_container {
+  display: flex;
+  justify-content: center;
+}
