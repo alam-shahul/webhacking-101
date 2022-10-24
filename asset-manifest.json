@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/webhacking-101/static/css/main.3775332d.css",
+    "main.js": "/webhacking-101/static/js/main.062852fd.js",
+    "static/js/787.14a06bf2.chunk.js": "/webhacking-101/static/js/787.14a06bf2.chunk.js",
+    "static/media/NewRodinDB.otf": "/webhacking-101/static/media/NewRodinDB.1f53bbd70b443aaf20da.otf",
+    "static/media/cute_bunny.jpg": "/webhacking-101/static/media/cute_bunny.0555cb51fc593c6f9131.jpg",
+    "index.html": "/webhacking-101/index.html",
+    "main.3775332d.css.map": "/webhacking-101/static/css/main.3775332d.css.map",
+    "main.062852fd.js.map": "/webhacking-101/static/js/main.062852fd.js.map",
+    "787.14a06bf2.chunk.js.map": "/webhacking-101/static/js/787.14a06bf2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3775332d.css",
+    "static/js/main.062852fd.js"
+  ]
+}
