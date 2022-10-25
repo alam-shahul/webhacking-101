@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 
 function Home(props) {
   return (
@@ -10,6 +12,7 @@ function Home(props) {
       </div>
       <div className="home-text">
         <div>Instructions:</div>
+        <ListItem sx={{ display: 'list-item' }}>Hello</ListItem>
         <div className="crossword_container">
         </div>
       </div>

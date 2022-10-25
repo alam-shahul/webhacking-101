@@ -59,7 +59,7 @@ function App() {
       '2fe9de7d85da5ebba405ecfd4ee543ddaaa3a9a70eeec2143e90b4e5ae7c960320491a1b3199134854a5274cf5cadea19bc73ed980fb9fe5e0ed705035c68230',
       '77305c572ff69e4795a81531a53a9fc99d3fc9ce0ee181517c980ba37d584c0cfa9a6554008d81008a44cd62851a6ecec570b8b83c5c7adb1b2fbb8a72b028b7',
       '088a2fc4d66af286eb6929c8869a3350cfc62de58ff45d16275c6f98e84a005af70edd933c4bcced65bdc66271ef24a4146f6e219ff52e20844f4209555d83a9',
-      'c5e88d865bdd8e8ca19846bd96ea1b66d6dadd2b20b24dc7180df723c6804fe985176d3628d3b0e2919b79eab8b6475c713c54bb4c977e6146272d27391f3e52',
+      '62902fa7d52fc9e6b5c9af5fdfe4086bbcb78c15bdeb572ee9da3ed490e683ac7d39ef607ec0207550de97313823bb41c7d78aa903fdc623c3bf01b54aa82bd1'
   ]
 
   const num_puzzles = 5;
@@ -75,7 +75,7 @@ function App() {
   const drawerWidth = "140px"
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/webhacking-101">
       <StyledEngineProvider injectFirst>
         <div className="container">
           <div className="navbar">
