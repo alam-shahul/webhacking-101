@@ -20,7 +20,9 @@
 
 .incomplete_puzzle {
 }
-
+.bold {
+  font-weight: bold;
+}
 a, a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
