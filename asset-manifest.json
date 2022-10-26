@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/webhacking-101/static/css/main.040746b0.css",
-    "main.js": "/webhacking-101/static/js/main.0e498b3f.js",
+    "main.css": "/webhacking-101/static/css/main.61276b1c.css",
+    "main.js": "/webhacking-101/static/js/main.292371d3.js",
     "static/js/787.14a06bf2.chunk.js": "/webhacking-101/static/js/787.14a06bf2.chunk.js",
     "static/media/NewRodinDB.otf": "/webhacking-101/static/media/NewRodinDB.1f53bbd70b443aaf20da.otf",
     "static/media/goldfish.png": "/webhacking-101/static/media/goldfish.9478f430b8c2843c0016.png",
     "static/media/cute_bunny.jpg": "/webhacking-101/static/media/cute_bunny.0555cb51fc593c6f9131.jpg",
     "index.html": "/webhacking-101/index.html",
-    "main.040746b0.css.map": "/webhacking-101/static/css/main.040746b0.css.map",
-    "main.0e498b3f.js.map": "/webhacking-101/static/js/main.0e498b3f.js.map",
+    "main.61276b1c.css.map": "/webhacking-101/static/css/main.61276b1c.css.map",
+    "main.292371d3.js.map": "/webhacking-101/static/js/main.292371d3.js.map",
     "787.14a06bf2.chunk.js.map": "/webhacking-101/static/js/787.14a06bf2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.040746b0.css",
-    "static/js/main.0e498b3f.js"
+    "static/css/main.61276b1c.css",
+    "static/js/main.292371d3.js"
   ]
 }
