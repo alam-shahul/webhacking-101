@@ -105,8 +105,8 @@ class Game extends React.Component {
     } 
 
     currentsquares[0].squares[i].error = errorMessage;
-    console.log(errorMessage)
-    console.log(currentsquares)
+    // console.log(errorMessage)
+    // console.log(currentsquares)
 
     //Setstate with new movement
     this.setState({
@@ -117,7 +117,7 @@ class Game extends React.Component {
 
   render() {
     const squares = this.state.squares;
-	console.log(squares["0"])
+	// console.log(squares["0"])
     const movesLeft = this.state.movesLeft;
     return (
       <div>

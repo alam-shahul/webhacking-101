@@ -39,7 +39,6 @@ function Puzzle0(props) {
   };
 
   function onCrosswordCorrect(isCorrect) {
-    console.log(isCorrect)
     props.updatePuzzleHash(JSON.stringify({...data, solved: isCorrect}))
     crosswordRef.current.focus()
     crosswordRef.current.reset()
