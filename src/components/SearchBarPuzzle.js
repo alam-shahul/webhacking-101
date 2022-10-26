@@ -26,7 +26,7 @@ function SearchBarPuzzle(props) {
         </div>
         Search for cat videos!
       </div>
-      <div>It doesn't seem like the search bar is accepting your <span className="monospace">input</span>...</div>
+      <div className="puzzle_description">It doesn't seem like the search bar is accepting your <span className="monospace">input</span>...</div>
       <br/>
 
       <div className="browser-container">

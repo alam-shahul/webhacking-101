@@ -8,6 +8,7 @@ import Puzzle2 from './components/Puzzle2.js'
 import Puzzle3 from './components/SearchBarPuzzle.js'
 import Puzzle4 from './components/Puzzle4.js'
 import Puzzle5 from './components/Puzzle5.js'
+import Puzzle6 from './components/Puzzle6.js'
 import crypto from "crypto-js";
 
 import Drawer from '@mui/material/Drawer';
@@ -59,10 +60,11 @@ function App() {
       '2fe9de7d85da5ebba405ecfd4ee543ddaaa3a9a70eeec2143e90b4e5ae7c960320491a1b3199134854a5274cf5cadea19bc73ed980fb9fe5e0ed705035c68230',
       '77305c572ff69e4795a81531a53a9fc99d3fc9ce0ee181517c980ba37d584c0cfa9a6554008d81008a44cd62851a6ecec570b8b83c5c7adb1b2fbb8a72b028b7',
       'b9be66708a23b3a5560ab5c667da0f5f7d560e0be420c9294b63bd04290ecedb03be183d10657dd11027777779395570dd95f813632cae347382148fe137aae2',
-      'c5e88d865bdd8e8ca19846bd96ea1b66d6dadd2b20b24dc7180df723c6804fe985176d3628d3b0e2919b79eab8b6475c713c54bb4c977e6146272d27391f3e52'
+      'c5e88d865bdd8e8ca19846bd96ea1b66d6dadd2b20b24dc7180df723c6804fe985176d3628d3b0e2919b79eab8b6475c713c54bb4c977e6146272d27391f3e52',
+      'b04dc7d0c5f94ad94f959397660f51bdc7b73dd736d3aa3feac8f205bca4a793df74d5df156e5915a58e73eacec1d034e616680d2b8cc939276badcaa28fd39e'
   ]
 
-  const num_puzzles = 5;
+  const num_puzzles = 7;
   const [ puzzleState, setPuzzleState ] = useState(Array.from({length: num_puzzles}, (v, i) => i))
 
   function updateHash(puzzleIndex, plain_text) {
@@ -92,12 +94,18 @@ function App() {
               anchor="left"
             >
               <List>
+			    <Link to={"/"}>
+			      <ListItemButton>
+                    Home
+                  </ListItemButton>
+			    </Link>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={0}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={1}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={2}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={3}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={4}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={5}/>
+                <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} index={6}/>
               </List>
             </Drawer>
           </div>
@@ -110,6 +118,7 @@ function App() {
               <Route exact path="/puzzle3" element={<Puzzle3 updatePuzzleHash={(plain_text) => updateHash(3, plain_text)} unlocked={puzzleState[2] === expectedHashes[2]}/>}/>
               <Route exact path="/puzzle4" element={<Puzzle4 updatePuzzleHash={(plain_text) => updateHash(4, plain_text)} unlocked={puzzleState[3] === expectedHashes[3]}/>}/>
               <Route exact path="/puzzle5" element={<Puzzle5 updatePuzzleHash={(plain_text) => updateHash(5, plain_text)} unlocked={puzzleState[4] === expectedHashes[4]}/>}/>
+              <Route exact path="/puzzle6" element={<Puzzle6 updatePuzzleHash={(plain_text) => updateHash(6, plain_text)} unlocked={puzzleState[5] === expectedHashes[5]}/>}/>
             </Routes>
           </div>
         </div>
