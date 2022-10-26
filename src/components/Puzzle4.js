@@ -7,7 +7,6 @@ function SearchBarPuzzle(props) {
     // Update the document title using the browser API
     if (isCheckSearchBar) {
       let searchBar = document.getElementById("search-bar");
-      console.log(searchBar.value)
       if (searchBar && searchBar.tagName === "INPUT" && searchBar.value === "cat videos") {
         props.updatePuzzleHash(JSON.stringify({
             tag_name: searchBar.tagName,

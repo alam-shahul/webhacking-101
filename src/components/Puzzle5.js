@@ -6,7 +6,8 @@ import '../public/stylesheets/puzzle_5.css';
 
 function Puzzle6(props) {
   const passwordRef = useRef(null);
-  const [name, setName] = useState("Ben Bitdiddle")
+  const [firstName, setFirstName] = useState("Ms.")
+  const [lastName, setLastName] = useState("President")
   const [address, setAddress] = useState("1600 Pennsylvania Ave")
   const [city, setCity] = useState("Washington")
   const [state, setState] = useState("DC")
@@ -21,14 +22,11 @@ function Puzzle6(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.address.value);
-    console.log(e.target.state.value);
-    console.log(e.target.zipcode.value);
+    console.log("Hello, " + e.target.firstname.value + " " + e.target.lastname.value);
 
     let result = {
-      "name": e.target.name.value,
       "address": e.target.address.value,
+      "city": e.target.city.value,
       "state": e.target.state.value,
       "zipcode": e.target.zipcode.value,
     }
@@ -48,15 +46,17 @@ function Puzzle6(props) {
         <div className="form_container">
           <br/>
           <form className="hackable_form" onSubmit={handleSubmit}>
-            <div><TextField name="name" fullWidth label="Name" inputStyle={{minWidth: "150px"}} value={name} onChange={e => setName(e.target.value)}/></div>
+            <div><TextField name="firstname" fullWidth label="First Name"  value={firstName} onChange={e => setFirstName(e.target.value)}/></div>
             <br/>
-            <div><TextField disabled name="address" fullWidth label="Address" inputStyle={{minWidth: "150px"}} value={address} onChange={e => setAddress(e.target.value)}/></div>
+            <div><TextField name="lastname" fullWidth label="Last Name"  value={lastName} onChange={e => setLastName(e.target.value)}/></div>
             <br/>
-            <div><TextField disabled name="city" fullWidth label="City" inputStyle={{minWidth: "150px"}} value={city} onChange={e => setCity(e.target.value)}/></div>
+            <div><TextField disabled name="address" fullWidth label="Address"  value={address} onChange={e => setAddress(e.target.value)}/></div>
             <br/>
-            <div><TextField disabled name="state" fullWidth label="State" inputStyle={{minWidth: "150px"}} value={state} onChange={e => setState(e.target.value)}/></div>
+            <div><TextField disabled name="city" fullWidth label="City"  value={city} onChange={e => setCity(e.target.value)}/></div>
             <br/>
-            <div><TextField disabled name="zipcode" fullWidth label="Zipcode" inputStyle={{minWidth: "150px"}} value={zipcode} onChange={e => setZipcode(e.target.value)}/></div>
+            <div><TextField disabled name="state" fullWidth label="State"  value={state} onChange={e => setState(e.target.value)}/></div>
+            <br/>
+            <div><TextField disabled name="zipcode" fullWidth label="Zipcode"  value={zipcode} onChange={e => setZipcode(e.target.value)}/></div>
             <br/>
             <Button type="submit" variant="outlined">Order Package</Button>
           </form>

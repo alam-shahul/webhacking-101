@@ -4,12 +4,6 @@ import '../public/stylesheets/puzzle_7.css';
 import cute_bunny from  '../cute_bunny.jpg';
 
 function Puzzle4(props) {
-  const reader = new FileReader();
-  // reader.onloadend = () => {
-  //   console.log(reader.result);
-  // }
-  // reader.readAsDataURL(cute_bunny);
-  
   const [injectionString, setInjectionString] = useState("")
   const [executableCode, setExecutableCode] = useState("")
   const navigate = useNavigate()

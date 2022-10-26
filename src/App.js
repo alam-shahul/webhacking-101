@@ -71,7 +71,6 @@ function Timer(props) {
   }
 
   useEffect(() => {
-    console.log(props.activePuzzle);
     if (props.activePuzzle !== null && props.expectedHashes[props.activePuzzle] !== props.puzzleState[props.activePuzzle])  {
       const id = setInterval(() => updateTimeElapsed(props.activePuzzle, timesElapsed[props.activePuzzle] + 1), 1000);
       return () => {
@@ -95,7 +94,7 @@ function App() {
       'bb7f99ae8cda47be8611456bb9a239060e69300b469767b39b00fca52f30c15d61b2cc7dbffde5c9118064f772ace6bdc3c31de80f5c3a3cbfb19e1a16ecb6ce',
       '2fe9de7d85da5ebba405ecfd4ee543ddaaa3a9a70eeec2143e90b4e5ae7c960320491a1b3199134854a5274cf5cadea19bc73ed980fb9fe5e0ed705035c68230',
       '77305c572ff69e4795a81531a53a9fc99d3fc9ce0ee181517c980ba37d584c0cfa9a6554008d81008a44cd62851a6ecec570b8b83c5c7adb1b2fbb8a72b028b7',
-      '73f93e5e949dd41eb1bafe00d674af8cc0f771c4d7b52621b8f55638e6b6330cdf77de691fd3fd87f5ff8dd14582e00b3f39ff317c8c6cc82c3f62c4d0a594cb',
+      '11b5d0babdebb4916fdaadd99c463bece409771bfd8b84d4f39d3e4539582c013d0d300b08f51822d7e2b435079343b23405dc7cc1f1fdf4583c40ece71ec59d',
       'c5e88d865bdd8e8ca19846bd96ea1b66d6dadd2b20b24dc7180df723c6804fe985176d3628d3b0e2919b79eab8b6475c713c54bb4c977e6146272d27391f3e52',
       'b9be66708a23b3a5560ab5c667da0f5f7d560e0be420c9294b63bd04290ecedb03be183d10657dd11027777779395570dd95f813632cae347382148fe137aae2',
   ]
@@ -120,12 +119,11 @@ function App() {
 
       setPuzzleState(newPuzzleState)
       window.localStorage.setItem('puzzleState', JSON.stringify(newPuzzleState))
-      console.log(newPuzzleState)
+      //console.log(newPuzzleState)
   }
 
   const drawerWidth = "140px"
 
-  console.log("rerendered")
   return (
     <BrowserRouter basename="/webhacking-101">
       <StyledEngineProvider injectFirst>
@@ -146,7 +144,6 @@ function App() {
               <List>
 			    <Link to={"/"}>
 			      <ListItemButton onClick={() => { setActivePuzzle(null); setTimesElapsed(JSON.parse(window.localStorage.getItem('timesElapsed')));} }>
-  
                     Home
                   </ListItemButton>
 			    </Link>
@@ -158,6 +155,15 @@ function App() {
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} onClick={() => { setActivePuzzle(5)} } index={5}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} onClick={() => { setActivePuzzle(6)} } index={6}/>
                 <PuzzleButton hashes={puzzleState} expectedHashes={expectedHashes} onClick={() => { setActivePuzzle(7)} } index={7}/>
+			    { expectedHashes.every((element, index) => (element === puzzleState[index])) ?
+				  <Link to={"/"}>
+			        <ListItemButton onClick={() => { setActivePuzzle(null); setTimesElapsed(JSON.parse(window.localStorage.getItem('timesElapsed')));} }>
+                     🎉🎉🎉
+                    </ListItemButton>
+			      </Link>
+				  :
+				  <></>
+				}
               </List>
             </Drawer>
           </div>

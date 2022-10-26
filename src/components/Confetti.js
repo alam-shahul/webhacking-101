@@ -14,7 +14,6 @@ export default function Realistic(props) {
       const refAnimationInstance = useRef(null);
 
       useEffect(() => {
-        console.log(props)
         if (props.confettiCount > 0) {
           props.setConfettiCount(0)
           fire()
