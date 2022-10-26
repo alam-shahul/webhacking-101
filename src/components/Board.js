@@ -4,7 +4,6 @@ import Square from './Square.js';
 class Board extends React.Component {
     constructor(props) {
       super(props);
-	  console.log(props.squares["0"])
       this.state = {
           squares: props.squares,
           loading: props.loading,

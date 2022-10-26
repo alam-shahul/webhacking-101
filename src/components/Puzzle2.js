@@ -14,22 +14,6 @@ function Puzzle2(props) {
         navigate("/")
     }
   )
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.address.value);
-    console.log(e.target.state.value);
-    console.log(e.target.zipcode.value);
-
-    let result = {
-      "name": e.target.name.value,
-      "address": e.target.address.value,
-      "state": e.target.state.value,
-      "zipcode": e.target.zipcode.value,
-    }
-    props.updatePuzzleHash(JSON.stringify(result))
-  }
-
   const handleDrag = (e, ui) => {
     setDeltaX(deltaX + ui.deltaX)
 	let result = {
