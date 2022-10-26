@@ -1,6 +1,9 @@
 import './public/stylesheets/App.css';
 import { useState, useEffect} from "react"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import ReactCanvasConfetti from "react-canvas-confetti";
+
+import RealisticConfetti from './components/Confetti.js'
 import Home from './components/Home.js'
 import Puzzle0 from './components/Puzzle0.js'
 import Puzzle1 from './components/Puzzle1.js'
@@ -15,7 +18,6 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import { StyledEngineProvider } from '@mui/material/styles';
-
 function PuzzleButton(props) {
     const [unlocked, setUnlocked] = useState(false)
     const [solved, setSolved] = useState(false)
@@ -66,16 +68,22 @@ function App() {
 
   const num_puzzles = 7;
   const [ puzzleState, setPuzzleState ] = useState(Array.from({length: num_puzzles}, (v, i) => i))
+  const [ confettiCount, setConfettiCount ] = useState(0);
 
   function updateHash(puzzleIndex, plain_text) {
       let newPuzzleState = [...puzzleState]
       let newHash = crypto.SHA512(plain_text).toString()
       newPuzzleState[puzzleIndex] = newHash
+
+      if (newHash === expectedHashes[puzzleIndex])
+        setConfettiCount(confettiCount + 1)
+
       setPuzzleState(newPuzzleState)
       console.log(newPuzzleState)
   }
   const drawerWidth = "140px"
 
+  console.log("rerendered")
   return (
     <BrowserRouter basename="/webhacking-101">
       <StyledEngineProvider injectFirst>
@@ -123,6 +131,7 @@ function App() {
           </div>
         </div>
       </StyledEngineProvider>
+      <RealisticConfetti confettiCount={confettiCount} setConfettiCount={setConfettiCount}/>
 	</BrowserRouter>
   );
 }

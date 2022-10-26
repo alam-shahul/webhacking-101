@@ -28,7 +28,7 @@ function Puzzle2(props) {
             <br/>
             <div>Original password: <span id="overwrite" ref={passwordRef}></span></div>
             <br/>
-            <div>Copy the password here: <input type="password" value={copiedPassword} onChange={e => {setCopiedPassword(e.target.value); props.updatePuzzleHash(JSON.stringify(e.target.value))}}/></div>
+            <div>Copy the password here: <input name="password" type="password" value={copiedPassword} onChange={e => {setCopiedPassword(e.target.value); props.updatePuzzleHash(JSON.stringify(e.target.value))}}/></div>
           </form>
         </div>
       </div>
