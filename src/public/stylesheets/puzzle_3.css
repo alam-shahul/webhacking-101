@@ -1,0 +1,10 @@
+#password {
+    -webkit-text-security: disc;
+    height:20px; width:100px;
+    -webkit-appearance: textfield;
+    padding: 1px;
+    background-color: white;
+    border: 2px inset;
+    -webkit-user-select: text;
+    cursor: auto;
+}

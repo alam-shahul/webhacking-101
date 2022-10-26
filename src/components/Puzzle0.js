@@ -7,30 +7,30 @@ function Puzzle0(props) {
   const data = {
       across: {
         1: {
-          clue: '___ Alley',
-          answer: 'TORNADO',
+          clue: '____-bellied (synonym for "cowardly")',
+          answer: 'YELLOW',
           row: 0,
           col: 0
         },
         2: {
-          clue: 'Asian downpour',
-          answer: 'MONSOON',
+          clue: '♫____ sheep, ____ sheep,\nhave you any wool♫',
+          answer: 'BLACK',
           row: 2,
-          col: 0
-        },
-        3: {
-          clue: 'Run, ____, run!',
-          answer: 'FOREST',
-          row: 6,
-          col: 0
+          col: 2
         },
       },
       down: {
-        2: {
-          clue: 'Californian climate, most of the time',
-          answer: 'DROUGHT',
+        1: {
+          clue: 'You might find one in a tree',
+          answer: 'ORANGE',
           row: 0,
-          col: 5
+          col: 4
+        },
+        2: {
+          clue: '____-ie (something tasty)',
+          answer: 'BROWN',
+          row: 2,
+          col: 2
         },
       }
   };
@@ -55,7 +55,7 @@ function Puzzle0(props) {
       <div className="puzzle_0">
         <div className="crossword_container">
           <ThemeProvider theme={theme}>
-            <Crossword ref={crosswordRef} data={data} onCrosswordCorrect={onCrosswordCorrect}/>
+            <Crossword useStorage={false} ref={crosswordRef} data={data} onCrosswordCorrect={onCrosswordCorrect}/>
           </ThemeProvider>
         </div>
       </div>

@@ -1,9 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../public/stylesheets/puzzle_7.css';
+import cute_bunny from  '../cute_bunny.jpg';
 
-function Puzzle7(props) {
-  const passwordRef = useRef(null);
+function Puzzle4(props) {
+  const reader = new FileReader();
+  // reader.onloadend = () => {
+  //   console.log(reader.result);
+  // }
+  // reader.readAsDataURL(cute_bunny);
+  
+  const [injectionString, setInjectionString] = useState("")
+  const [executableCode, setExecutableCode] = useState("")
   const navigate = useNavigate()
   useEffect(() =>
     {
@@ -11,40 +19,55 @@ function Puzzle7(props) {
         navigate("/")
     }
   )
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target.name.value);
-    console.log(e.target.address.value);
-    console.log(e.target.state.value);
-    console.log(e.target.zipcode.value);
-
-    let result = {
-      "name": e.target.name.value,
-      "address": e.target.address.value,
-      "state": e.target.state.value,
-      "zipcode": e.target.zipcode.value,
+  useEffect(() =>
+    {
+      updateHash();
     }
-    props.updatePuzzleHash(JSON.stringify(result))
+  , [injectionString])
+
+  function custom_eval(code) {
+    try {
+      new Function(code)(); 
+    } catch (e) {
+      if (e instanceof SyntaxError) {
+        console.log(e.message);
+      }
+    }
   }
+
+  function updateHash() {
+    let injectable = document.getElementById("response_container");
+    for (const child of injectable.childNodes) {
+        if (child.nodeName == "IMG" && child.src.includes(cute_bunny)) {
+          props.updatePuzzleHash(JSON.stringify({
+            "nodeName": child.nodeName,
+            "srcMatch": child.src.includes(cute_bunny)
+          }))
+        }
+    }
+  }
+
   return (
     <div className="puzzle">
       <div className="puzzle_title">
         <div className="puzzle_header">
-        Puzzle 6
+        Puzzle 7
         </div>
-        Intercept the package!
+        Make a <span className="monospace">cute_bunny</span> appear on the page!
       </div>
-      <div className="puzzle_description">The president is receiving an important package via Amazon delivery, but we would like to receive it here at CMU <span className="monospace">(5000 Forbes Ave, Pittsburgh, PA 15213)</span>...</div>
-      <br/>
-      <div className="puzzle_6">
-        <div className="form_container">
-          <br/>
+      <div className="puzzle_4">
+        <div className="injection_container">
+          <form onSubmit={e => e.preventDefault()}>
+            <div>Ask and you shall receive: <input value={injectionString} onChange={e => {setInjectionString(e.target.value)}}/></div>
+            <br/>
+            <div id="response_container">Make the bunny appear here</div>
+            {custom_eval(`${injectionString}`)}
+            <div className="hidden">You can find the bunny here: {cute_bunny}</div>
+          </form>
         </div>
       </div>
     </div>
   );
 }
 
-export default Puzzle6;
-
+export default Puzzle4;

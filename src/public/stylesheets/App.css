@@ -3,6 +3,20 @@
     justify-content: flex-start;
     flex-direction: row;
     text-align: center;
+    font-family: 'Verdana';
+}
+.top_right{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.timer {
+  display: inline-block;
+  border: 2px solid red;
+  padding: 2px;
+}
+.timer_time {
+  color: red;
 }
 .puzzle {
     display: flex;
